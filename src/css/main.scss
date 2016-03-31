@@ -194,6 +194,48 @@ footer {
   }
 }
 
+.search-box {
+  position: absolute;
+  display: none;
+  top:105px;
+  left:0;
+  width:100%;
+  border-top: 2px solid $primary-blue;
+  background-color: $primary-black;
+  height:200px;
+  line-height: 200px;
+  font-size: 1.5em;
+  color: $primary-blue;
+  text-align: center;
+  .search-container {
+    display: none;
+  }
+  .search-input, .search-icon {
+    display: inline-block;
+  }
+  .search-input {
+    width: 75%;
+    input {
+      color: $primary-black;
+      width: 100%;
+      line-height: 2em;
+      border: none;
+      border-radius: 2px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .search-icon {
+    padding: 0px 10px;
+    text-align: left;
+    cursor: pointer;
+    &:hover {
+      color: darken($primary-blue, 10%);
+    }
+  }
+}
+
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 380px) {
 
@@ -236,6 +278,11 @@ footer {
     padding: 5px 5px;
     width: 100%;
   }
+  .search-input {
+    input {
+      font-size: .5em;
+    }
+  }
 }
 
 /* Small Devices, Tablets */
@@ -245,6 +292,11 @@ footer {
     font-size: 1em;
     .fa {
       font-size: 1.1em;
+    }
+  }
+  .search-input {
+    input {
+      font-size: .6em;
     }
   }
 }

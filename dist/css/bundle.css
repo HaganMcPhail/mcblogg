@@ -8002,6 +8002,40 @@ footer {
   100% {
     transform: translateY(0%); } }
 
+.search-box {
+  position: absolute;
+  display: none;
+  top: 105px;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid #0AC2D2;
+  background-color: #444444;
+  height: 200px;
+  line-height: 200px;
+  font-size: 1.5em;
+  color: #0AC2D2;
+  text-align: center; }
+  .search-box .search-container {
+    display: none; }
+  .search-box .search-input, .search-box .search-icon {
+    display: inline-block; }
+  .search-box .search-input {
+    width: 75%; }
+    .search-box .search-input input {
+      color: #444444;
+      width: 100%;
+      line-height: 2em;
+      border: none;
+      border-radius: 2px; }
+      .search-box .search-input input:focus {
+        outline: none; }
+  .search-box .search-icon {
+    padding: 0px 10px;
+    text-align: left;
+    cursor: pointer; }
+    .search-box .search-icon:hover {
+      color: #0895a1; }
+
 /* Custom, iPhone Retina */
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
@@ -8027,14 +8061,18 @@ footer {
   .blog-preview {
     margin: 15px auto;
     padding: 5px 5px;
-    width: 100%; } }
+    width: 100%; }
+  .search-input input {
+    font-size: .5em; } }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
   .menu-bar {
     font-size: 1em; }
     .menu-bar .fa {
-      font-size: 1.1em; } }
+      font-size: 1.1em; }
+  .search-input input {
+    font-size: .6em; } }
 
 /* Medium Devices, Desktops */
 /* Large Devices, Wide Screens */
