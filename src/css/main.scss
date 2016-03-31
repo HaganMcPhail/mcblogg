@@ -85,6 +85,9 @@ header {
       }
     }
   }
+  .menu-button-container {
+    display: none;
+  }
 }
 
 // main
@@ -103,8 +106,96 @@ header {
   }
 }
 
+// blogs
+.blog-preview {
+  cursor: pointer;
+  float: none;
+  margin: 15px auto;
+  padding: 10px 10px;
+  width: 80%;
+  background-color: $white;
+  box-shadow: 0px 1px 3px rgba($black, 0.2);
+  min-height:200px;
+  img {
+    width: 100%;
+  }
+  .blog-info {
+    font-family: Lucia Grande, sans-serif;
+    .blog-title {
+      padding-top: 5px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .blog-date {
+      font-size: .8em;
+      text-align: right;
+    }
+  }
+  .blog-text {
+    font-family: Lucia Grande, sans-serif;
+    font-size: 1em;
+    text-align: left;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.return-to-top {
+  position: absolute;
+  top: -25px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: $primary-blue;
+  z-index: 10;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  color: $white;
+  cursor: pointer;
+  &:hover {
+    color: $primary-black;
+  }
+  -webkit-animation: bounce 1500ms infinite;
+	-moz-animation: bounce 1500ms infinite;
+	-o-animation: bounce 1500ms infinite;
+	animation: bounce 1500ms infinite;
+}
+
+// footer
+footer {
+  position: relative;
+  margin-top: 10px;
+  height: 50px;
+  background-color: $primary-black;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1em;
+  color: $white;
+}
+
+@keyframes bounce {
+  0% {
+    transform:translateY(0%);
+  }
+  25% {
+    transform:translateY(-20%);
+  }
+  50% {
+    transform:translateY(0%);
+  }
+  75% {
+    transform:translateY(-20%);
+  }
+  100% {
+    transform:translateY(0%);
+  }
+}
+
 /* Custom, iPhone Retina */
-@media only screen and (max-width : 320px) {
+@media only screen and (max-width : 380px) {
 
 }
 
@@ -112,6 +203,9 @@ header {
 @media only screen and (max-width : 480px) {
   .menu-icon-container:not(.logo-container) {
     display: none;
+  }
+  .sub-menu-left, .sub-menu-right {
+    padding: 0px 10px !important;
   }
   .logo-container {
     padding-left: 15px;
@@ -137,10 +231,16 @@ header {
       padding: 0px 5px;
     }
   }
+  .blog-preview {
+    margin: 15px auto;
+    padding: 5px 5px;
+    width: 100%;
+  }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+  // body {background-color: red;}
   .menu-bar {
     font-size: 1em;
     .fa {

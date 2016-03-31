@@ -7917,6 +7917,8 @@ header {
       text-decoration: none; }
       .menu-bar .menu-icon-container a:hover, .menu-bar .menu-icon-container:focus:hover, .menu-bar .menu-icon-container a.active:hover {
         color: gray; }
+  .menu-bar .menu-button-container {
+    display: none; }
 
 .featured {
   text-align: center; }
@@ -7930,11 +7932,83 @@ header {
     text-decoration: underline;
     color: #0AC2D2; }
 
+.blog-preview {
+  cursor: pointer;
+  float: none;
+  margin: 15px auto;
+  padding: 10px 10px;
+  width: 80%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  min-height: 200px; }
+  .blog-preview img {
+    width: 100%; }
+  .blog-preview .blog-info {
+    font-family: Lucia Grande, sans-serif; }
+    .blog-preview .blog-info .blog-title {
+      padding-top: 5px;
+      font-size: 1.2em;
+      font-weight: bold; }
+    .blog-preview .blog-info .blog-date {
+      font-size: .8em;
+      text-align: right; }
+  .blog-preview .blog-text {
+    font-family: Lucia Grande, sans-serif;
+    font-size: 1em;
+    text-align: left; }
+  .blog-preview:hover {
+    opacity: 0.7; }
+
+.return-to-top {
+  position: absolute;
+  top: -25px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #0AC2D2;
+  z-index: 10;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  color: #FFFFFF;
+  cursor: pointer;
+  -webkit-animation: bounce 1500ms infinite;
+  -moz-animation: bounce 1500ms infinite;
+  -o-animation: bounce 1500ms infinite;
+  animation: bounce 1500ms infinite; }
+  .return-to-top:hover {
+    color: #444444; }
+
+footer {
+  position: relative;
+  margin-top: 10px;
+  height: 50px;
+  background-color: #444444;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1em;
+  color: #FFFFFF; }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0%); }
+  25% {
+    transform: translateY(-20%); }
+  50% {
+    transform: translateY(0%); }
+  75% {
+    transform: translateY(-20%); }
+  100% {
+    transform: translateY(0%); } }
+
 /* Custom, iPhone Retina */
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   .menu-icon-container:not(.logo-container) {
     display: none; }
+  .sub-menu-left, .sub-menu-right {
+    padding: 0px 10px !important; }
   .logo-container {
     padding-left: 15px; }
   .menu-bar .menu-button-container {
@@ -7949,7 +8023,11 @@ header {
         color: gray; }
   .featured div {
     font-size: .9em;
-    padding: 0px 5px; } }
+    padding: 0px 5px; }
+  .blog-preview {
+    margin: 15px auto;
+    padding: 5px 5px;
+    width: 100%; } }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
