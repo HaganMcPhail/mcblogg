@@ -1,4 +1,109 @@
+$primary-blue: #0AC2D2;
+$primary-black: #444444;
+$primary-white: #FAFAFA;
+$black: #000000;
+$white: #FFFFFF;
 
+body {
+  background-color: $primary-white;
+  font-size: 16px;
+  color: $primary-black;
+  font-family: copperplate, 'Lucida Grande';
+  width: 100%;
+}
+
+//header
+header {
+  width: 100%;
+}
+
+.sub-container {
+  width: 100%;
+  height:40px;
+  display: inline-block;
+  color: $primary-blue;
+  font-weight: bold;
+  background-color: $primary-white;
+  .sub-menu-left, .sub-menu-right {
+    padding: 0px 25px;
+    a {
+      padding: 0px 5px;
+      font-weight: normal;
+      font-size: 1.1em;
+      line-height: 40px;
+      text-decoration: none;
+      color: $primary-black;
+      &:hover {
+        color: $primary-blue;
+      }
+    }
+  }
+  .sub-menu-left {
+    float: left;
+    text-align: left;
+    float: left;
+    display: inline-block;
+    font-size: 1.3em;
+  }
+  .sub-menu-right {
+    float: right;
+    text-align: right;
+    float: right;
+    display: inline-block;
+  }
+}
+
+.menu-bar {
+  height: 65px;
+  background-color: $primary-black;
+  text-align: center;
+  line-height: 65px;
+  font-size: 24px;
+  margin-top: -7px;
+  .fa {
+    font-size: 25px;
+    vertical-align: middle;
+    color: $primary-blue;
+  }
+  object.logo {
+    height: 55px;
+    padding-top: 8px;
+  }
+  img.logo {
+    height: 48px;
+    padding-top: 0px;
+  }
+  .menu-icon-container {
+    float: left;
+    width:20%;
+    display: inline-block;
+    a, &:focus, a.active {
+      color: $white;
+      text-decoration: none;
+      &:hover{
+        color: darken($white, 50%);
+      }
+    }
+  }
+}
+
+
+
+// main
+.featured {
+  text-align: center;
+  div {
+    display: inline-block;
+    word-wrap: break-word;
+    font-size: 1.1em;
+    cursor:pointer;
+    padding: 0px 10px;
+  }
+  .active {
+    text-decoration: underline;
+    color: $primary-blue;
+  }
+}
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px) {

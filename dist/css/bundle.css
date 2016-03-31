@@ -7851,6 +7851,85 @@ button.close {
 .fa-percent:before {
   content: "\f295"; }
 
+body {
+  background-color: #FAFAFA;
+  font-size: 16px;
+  color: #444444;
+  font-family: copperplate, 'Lucida Grande';
+  width: 100%; }
+
+header {
+  width: 100%; }
+
+.sub-container {
+  width: 100%;
+  height: 40px;
+  display: inline-block;
+  color: #0AC2D2;
+  font-weight: bold;
+  background-color: #FAFAFA; }
+  .sub-container .sub-menu-left, .sub-container .sub-menu-right {
+    padding: 0px 25px; }
+    .sub-container .sub-menu-left a, .sub-container .sub-menu-right a {
+      padding: 0px 5px;
+      font-weight: normal;
+      font-size: 1.1em;
+      line-height: 40px;
+      text-decoration: none;
+      color: #444444; }
+      .sub-container .sub-menu-left a:hover, .sub-container .sub-menu-right a:hover {
+        color: #0AC2D2; }
+  .sub-container .sub-menu-left {
+    float: left;
+    text-align: left;
+    float: left;
+    display: inline-block;
+    font-size: 1.3em; }
+  .sub-container .sub-menu-right {
+    float: right;
+    text-align: right;
+    float: right;
+    display: inline-block; }
+
+.menu-bar {
+  height: 65px;
+  background-color: #444444;
+  text-align: center;
+  line-height: 65px;
+  font-size: 24px;
+  margin-top: -7px; }
+  .menu-bar .fa {
+    font-size: 25px;
+    vertical-align: middle;
+    color: #0AC2D2; }
+  .menu-bar object.logo {
+    height: 55px;
+    padding-top: 8px; }
+  .menu-bar img.logo {
+    height: 48px;
+    padding-top: 0px; }
+  .menu-bar .menu-icon-container {
+    float: left;
+    width: 20%;
+    display: inline-block; }
+    .menu-bar .menu-icon-container a, .menu-bar .menu-icon-container:focus, .menu-bar .menu-icon-container a.active {
+      color: #FFFFFF;
+      text-decoration: none; }
+      .menu-bar .menu-icon-container a:hover, .menu-bar .menu-icon-container:focus:hover, .menu-bar .menu-icon-container a.active:hover {
+        color: gray; }
+
+.featured {
+  text-align: center; }
+  .featured div {
+    display: inline-block;
+    word-wrap: break-word;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 0px 10px; }
+  .featured .active {
+    text-decoration: underline;
+    color: #0AC2D2; }
+
 /* Custom, iPhone Retina */
 /* Extra Small Devices, Phones */
 /* Small Devices, Tablets */

@@ -50,7 +50,7 @@ var position = function(start, end, elapsed, duration) {
 // if the first argument is an element then scroll to the top of this element
 // if the first argument is numeric then scroll to this location
 // if the callback exist, it is called when the scrolling is finished
-// if context is set then scroll that element, else scroll window
+// if context is set then scroll that element, else scroll window 
 var smoothScroll = function(el, duration, callback, context){
     duration = duration || 500;
     context = context || window;
@@ -59,7 +59,7 @@ var smoothScroll = function(el, duration, callback, context){
     if (typeof el === 'number') {
       var end = parseInt(el);
     } else {
-      var end = getTop(el) - 75;
+      var end = getTop(el);
     }
 
     var clock = Date.now();
