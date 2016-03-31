@@ -1,16 +1,24 @@
 $(document).ready(function(){
+
+  // featured content selector
   $('.featured div').click(function(){
     $('.featured div').removeClass("active");
     $(this).addClass("active");
   });
-  $('.display-search').click(function(){
+
+  // search bar
+  $('a[class^="display-"]').click(function(){
+    var item = $(this).attr('item');
     if ($(this).hasClass('active')){
-      $('.search-container').hide("slide", { direction: "right" }, 400);
-      $('.search-box').slideUp(400);
+      $('.' + item + '-box').hide("slide", { direction: "up" }, 300);
       $(this).removeClass('active');
     } else {
-      $('.search-box').slideDown(400);
-      $('.search-container').show("slide", { direction: "left" }, 800);
+      $('a[class^="display-"]').removeClass('active');
+      $('section[class$="-box"]').hide("slide", { direction: "up" }, 300, function(){
+        setTimeout(function(){
+          $('.' + item + '-box').show("slide", { direction: "up" }, 300);
+        }, 300);
+      });
       $(this).addClass('active');
     }
 

@@ -194,7 +194,7 @@ footer {
   }
 }
 
-.search-box {
+section[class$="-box"] {
   position: absolute;
   display: none;
   top:105px;
@@ -207,15 +207,13 @@ footer {
   font-size: 1.5em;
   color: $primary-blue;
   text-align: center;
-  .search-container {
-    display: none;
-  }
-  .search-input, .search-icon {
+  div[class$="-input"], div[class$="-icon"] {
     display: inline-block;
   }
-  .search-input {
+  div[class$="-input"] {
     width: 75%;
     input {
+      padding-left: 10px;
       color: $primary-black;
       width: 100%;
       line-height: 2em;
@@ -226,7 +224,7 @@ footer {
       }
     }
   }
-  .search-icon {
+  div[class$="-icon"] {
     padding: 0px 10px;
     text-align: left;
     cursor: pointer;

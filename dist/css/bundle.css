@@ -8002,7 +8002,7 @@ footer {
   100% {
     transform: translateY(0%); } }
 
-.search-box {
+section[class$="-box"] {
   position: absolute;
   display: none;
   top: 105px;
@@ -8015,25 +8015,24 @@ footer {
   font-size: 1.5em;
   color: #0AC2D2;
   text-align: center; }
-  .search-box .search-container {
-    display: none; }
-  .search-box .search-input, .search-box .search-icon {
+  section[class$="-box"] div[class$="-input"], section[class$="-box"] div[class$="-icon"] {
     display: inline-block; }
-  .search-box .search-input {
+  section[class$="-box"] div[class$="-input"] {
     width: 75%; }
-    .search-box .search-input input {
+    section[class$="-box"] div[class$="-input"] input {
+      padding-left: 10px;
       color: #444444;
       width: 100%;
       line-height: 2em;
       border: none;
       border-radius: 2px; }
-      .search-box .search-input input:focus {
+      section[class$="-box"] div[class$="-input"] input:focus {
         outline: none; }
-  .search-box .search-icon {
+  section[class$="-box"] div[class$="-icon"] {
     padding: 0px 10px;
     text-align: left;
     cursor: pointer; }
-    .search-box .search-icon:hover {
+    section[class$="-box"] div[class$="-icon"]:hover {
       color: #0895a1; }
 
 /* Custom, iPhone Retina */
