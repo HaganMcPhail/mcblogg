@@ -7896,10 +7896,10 @@ header {
   background-color: #444444;
   text-align: center;
   line-height: 65px;
-  font-size: 24px;
+  font-size: 1.5em;
   margin-top: -7px; }
   .menu-bar .fa {
-    font-size: 25px;
+    font-size: 1.6;
     vertical-align: middle;
     color: #0AC2D2; }
   .menu-bar object.logo {
@@ -7932,6 +7932,31 @@ header {
 
 /* Custom, iPhone Retina */
 /* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .menu-icon-container:not(.logo-container) {
+    display: none; }
+  .logo-container {
+    padding-left: 15px; }
+  .menu-bar .menu-button-container {
+    font-size: 1.5em;
+    float: right;
+    width: 20%;
+    display: inline-block; }
+    .menu-bar .menu-button-container .fa, .menu-bar .menu-button-container .fa:focus, .menu-bar .menu-button-container .fa.active {
+      color: #0AC2D2;
+      text-decoration: none; }
+      .menu-bar .menu-button-container .fa:hover, .menu-bar .menu-button-container .fa:focus:hover, .menu-bar .menu-button-container .fa.active:hover {
+        color: gray; }
+  .featured div {
+    font-size: .9em;
+    padding: 0px 5px; } }
+
 /* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .menu-bar {
+    font-size: 1em; }
+    .menu-bar .fa {
+      font-size: 1.1em; } }
+
 /* Medium Devices, Desktops */
 /* Large Devices, Wide Screens */
