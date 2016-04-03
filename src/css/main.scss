@@ -254,8 +254,8 @@ body {
   }
   &.close-section {
     opacity: 1;
-    top: 25px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
     background-color: $primary-black;
     .fa {
       color: $white;
@@ -389,6 +389,23 @@ section[class$="-box"], section[class$="-box active"] {
     display: none;
   }
 }
+
+.contact-box {
+  .contact-container {
+    margin: 23vh auto !important;
+  }
+  .contact-input * {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  textarea {
+    margin-bottom: -10px !important;
+  }
+  .contact-icon {
+    margin-bottom: -10px;
+  }
+}
+
 .archive-header {
   display: none;
 }

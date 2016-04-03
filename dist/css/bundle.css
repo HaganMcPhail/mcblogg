@@ -8120,8 +8120,8 @@ body {
       color: #444444; }
   .rounded-btn.close-section {
     opacity: 1;
-    top: 25px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
     background-color: #444444; }
     .rounded-btn.close-section .fa {
       color: #FFFFFF; }
@@ -8234,6 +8234,19 @@ section[class$="-box"], section[class$="-box active"] {
 .archive-box .months {
   z-index: 6;
   display: none; }
+
+.contact-box .contact-container {
+  margin: 23vh auto !important; }
+
+.contact-box .contact-input * {
+  margin-bottom: 15px;
+  width: 100%; }
+
+.contact-box textarea {
+  margin-bottom: -10px !important; }
+
+.contact-box .contact-icon {
+  margin-bottom: -10px; }
 
 .archive-header {
   display: none; }
