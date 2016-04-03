@@ -78,6 +78,8 @@ $(document).ready(function(){
     removeActiveSection($('section.active'));
     $('.featured-toggle').hide();
     $('.archive-header').show();
+    $('.xs-menu').hide("slide", { direction: "right" }, 300);
+    $('.menu-button-container').removeClass('active');
     loadPosts();
   });
 
@@ -95,7 +97,17 @@ $(document).ready(function(){
     if(event.keyCode == 13){
         closeOpenSection();
     }
-});
+  });
+
+  $('.menu-button-container').on("click", function(){
+    if ($(this).hasClass('active')){
+      $('.xs-menu').hide("slide", { direction: "left" }, 300);
+      $(this).removeClass('active');
+    } else {
+      $('.xs-menu').show("slide", { direction: "right" }, 300);
+      $(this).addClass('active');
+    }
+  });
 
   loadPosts();
   $('footer').show();

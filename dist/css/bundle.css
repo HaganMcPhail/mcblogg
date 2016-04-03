@@ -8153,7 +8153,8 @@ section[class$="-box"], section[class$="-box active"] {
   height: calc(100vh - 105px);
   font-size: 2em;
   color: #444444;
-  text-align: center; }
+  text-align: center;
+  z-index: 10; }
   section[class$="-box"] div[class$="-container"], section[class$="-box active"] div[class$="-container"] {
     margin-top: 34vh; }
   section[class$="-box"] div[class$="-input"], section[class$="-box"] div[class$="-icon"], section[class$="-box active"] div[class$="-input"], section[class$="-box active"] div[class$="-icon"] {
@@ -8250,6 +8251,45 @@ section[class$="-box"], section[class$="-box active"] {
 
 .archive-header {
   display: none; }
+
+section.xs-menu {
+  position: absolute;
+  display: none;
+  top: 105px;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid #0AC2D2;
+  background-color: #444444;
+  height: calc(100vh - 105px);
+  font-size: 2em;
+  color: #444444;
+  text-align: center; }
+  section.xs-menu .xs-menu-icon-container {
+    float: left;
+    display: inline-block;
+    height: 50vw;
+    width: 50vw;
+    padding-top: calc(25vw - 1em);
+    box-sizing: border-box; }
+    section.xs-menu .xs-menu-icon-container:nth-of-type(1) {
+      border-right: 1px solid #0AC2D2;
+      border-bottom: 1px solid #0AC2D2; }
+    section.xs-menu .xs-menu-icon-container:nth-of-type(2) {
+      border-left: 1px solid #0AC2D2;
+      border-bottom: 1px solid #0AC2D2; }
+    section.xs-menu .xs-menu-icon-container:nth-of-type(3) {
+      border-right: 1px solid #0AC2D2;
+      border-top: 1px solid #0AC2D2;
+      border-bottom: 2px solid #0AC2D2; }
+    section.xs-menu .xs-menu-icon-container:nth-of-type(4) {
+      border-left: 1px solid #0AC2D2;
+      border-top: 1px solid #0AC2D2;
+      border-bottom: 2px solid #0AC2D2; }
+    section.xs-menu .xs-menu-icon-container a, section.xs-menu .xs-menu-icon-container:focus, section.xs-menu .xs-menu-icon-container a.active {
+      color: #FFFFFF;
+      text-decoration: none; }
+      section.xs-menu .xs-menu-icon-container a:hover, section.xs-menu .xs-menu-icon-container:focus:hover, section.xs-menu .xs-menu-icon-container a.active:hover {
+        color: gray; }
 
 @media only screen and (max-width: 480px) {
   .menu-icon-container:not(.logo-container) {
