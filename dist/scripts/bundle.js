@@ -1,6 +1,17 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 $(document).ready(function(){
 
+  var closeOpenSection = function(){
+    var item = $('a.active').attr('item');
+    var icon = $('a.active').find('i').attr('icon');
+    $('a.active').find('i').attr('class', icon);
+    removeActiveLinks();
+    var activeSection = $('section.active');
+    $('.' + item + '-box').hide("slide", { direction: "right" }, 300);
+    removeActiveSection(activeSection);
+    $('body').css('overflow', 'visible');
+  }
+
   var removeActiveLinks = function (){
     $('a[class^="display-"]').removeClass('active');
   }
@@ -28,12 +39,21 @@ $(document).ready(function(){
 
   // menu bar interaction
   $('a[class^="display-"]').on("click", function(){
+    var className = $(this).find('i').attr('class');
+    $(this).find('i').attr('class', 'fa fa-close');
     var item = $(this).attr('item');
     if ($(this).hasClass('active')){
       $('.' + item + '-box').hide("slide", { direction: "right" }, 300);
       $(this).removeClass('active');
+      var icon = $(this).find('i').attr('icon');
+      $(this).find('i').attr('class', icon);
       $('body').css('overflow', 'visible');
     } else {
+      setTimeout(function(){
+        $('section.active').find('input').focus();
+      }, 0);
+      var icon = $('a.active').find('i').attr('icon');
+      $('a.active').find('i').attr('class', icon);
       var activeSection = $('section.active');
       removeActiveLinks();
       hideActiveSection(item, activeSection);
@@ -67,6 +87,16 @@ $(document).ready(function(){
     $(this).addClass("active");
     loadPosts();
   });
+
+  $('.close-section').on("click", function(){
+    closeOpenSection();
+  });
+
+  $('input').keyup(function(event){
+    if(event.keyCode == 13){
+        closeOpenSection();
+    }
+});
 
   loadPosts();
   $('footer').show();

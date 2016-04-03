@@ -228,26 +228,42 @@ body {
   }
 }
 
-.return-to-top {
+.rounded-btn{
   position: absolute;
-  top: -25px;
-  right: 20px;
   height: 50px;
   width: 50px;
   @include border-radius(50%);
-  background-color: $primary-blue;
   z-index: 10;
   text-align: center;
   line-height: 50px;
   font-size: 22px;
   cursor: pointer;
-  @include animation('bounce 1.5s infinite');
-  .fa {
-    color: $white;
-  }
-  &:hover {
+  &.return-top {
+    top: -25px;
+    right: 20px;
+    background-color: $primary-blue;
+    @include animation('bounce 1.5s infinite');
     .fa {
-      color: $primary-black;
+      color: $white;
+    }
+    &:hover {
+      .fa {
+        color: $primary-black;
+      }
+    }
+  }
+  &.close-section {
+    opacity: 1;
+    top: 25px;
+    right: 20px;
+    background-color: $primary-black;
+    .fa {
+      color: $white;
+    }
+    &:hover {
+      .fa {
+        color: $primary-blue;
+      }
     }
   }
 }
