@@ -7863,6 +7863,9 @@ body {
   font-family: copperplate, 'Lucida Grande';
   width: 100%; }
 
+.logo-container svg {
+  cursor: pointer; }
+
 .sub-container {
   width: 100%;
   height: 40px;
@@ -7908,9 +7911,10 @@ body {
   line-height: 65px;
   font-size: 1.5em;
   margin-top: -7px; }
-  .menu-bar object.logo {
+  .menu-bar .logo {
     height: 55px;
-    padding-top: 8px; }
+    padding-top: 8px;
+    cursor: pointer; }
   .menu-bar img.logo {
     height: 48px;
     padding-top: 0px; }
@@ -7938,7 +7942,8 @@ body {
         font-size: 1.1em; } }
 
 .featured {
-  text-align: center; }
+  text-align: center;
+  margin-top: 20px; }
   .featured div {
     display: inline-block;
     word-wrap: break-word;
@@ -8211,6 +8216,10 @@ section[class$="-box"], section[class$="-box active"] {
   margin: 50px auto !important; }
   @media only screen and (max-width: 768px) {
     .archive-box .archive-container {
+      width: calc(70% - 100px);
+      max-width: calc(100% - 100px); } }
+  @media only screen and (max-width: 480px) {
+    .archive-box .archive-container {
       width: calc(90% - 100px);
       max-width: calc(100% - 100px); } }
 
@@ -8250,7 +8259,13 @@ section[class$="-box"], section[class$="-box active"] {
   margin-bottom: -10px; }
 
 .archive-header {
-  display: none; }
+  display: none;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #444;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px; }
 
 section.xs-menu {
   position: absolute;

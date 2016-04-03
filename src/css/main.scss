@@ -15,6 +15,10 @@ body {
   width: 100%;
 }
 
+.logo-container svg{
+  cursor: pointer;
+}
+
 .sub-container {
   width: 100%;
   height:40px;
@@ -67,9 +71,10 @@ body {
   line-height: 65px;
   font-size: 1.5em;
   margin-top: -7px;
-  object.logo {
+  .logo {
     height: 55px;
     padding-top: 8px;
+    cursor: pointer;
   }
   img.logo {
     height: 48px;
@@ -107,6 +112,7 @@ body {
 // main
 .featured {
   text-align: center;
+  margin-top: 20px;
   div {
     display: inline-block;
     word-wrap: break-word;
@@ -360,6 +366,10 @@ section[class$="-box"], section[class$="-box active"] {
     height: calc(100% - 100px);
     margin: 50px auto !important;
     @include bp-small {
+      width: calc(70% - 100px);
+      max-width: calc(100% - 100px);
+    }
+    @include bp-extrasmall {
       width: calc(90% - 100px);
       max-width: calc(100% - 100px);
     }
@@ -409,6 +419,12 @@ section[class$="-box"], section[class$="-box active"] {
 
 .archive-header {
   display: none;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #444;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
 }
 
 section.xs-menu{
