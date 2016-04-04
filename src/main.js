@@ -88,6 +88,8 @@ $(document).ready(function(){
       $(this).removeClass('active');
       //set first input focus
       setFirstInputFocus();
+      // body overflow visible
+      $('body').css("overflow", "visible");
     } else {
       // open the section
       removeAllActiveLinks();
@@ -102,6 +104,8 @@ $(document).ready(function(){
       setFirstInputFocus();
       // hide menu for mobile device
       hideMobileMenu();
+      // body overflow hidden
+      $('body').css("overflow", "hidden");
     }
   });
 
@@ -129,6 +133,7 @@ $(document).ready(function(){
     toggleMenuHeading('archive');
     // reload posts
     loadPosts();
+    $('body').css("overflow", "visible");
   });
 
   $('.featured div').click(function(){
@@ -139,6 +144,7 @@ $(document).ready(function(){
 
   $('.close-section, div[class$="-icon"]').on("click", function(){
     closeSection();
+    $('body').css("overflow", "visible");
   });
 
   $('input').keyup(function(event){
