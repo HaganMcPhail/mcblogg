@@ -1,5 +1,10 @@
-$(document).ready(function(){
+var show = function(){
+  setTimeout(function(){
+    $(".load-placeholder").fadeOut(1000);
+  }, 1500)
+}
 
+$(document).ready(function(){
   var closeSection = function(){
     var item = $('a.active').attr('item');
     removeAllActiveLinks();
@@ -166,3 +171,10 @@ $(document).ready(function(){
   loadPosts();
   $('footer').show();
 });
+
+$(window).load(function() {
+  // show body
+  show();
+});
+
+setTimeout(show, 3000);
