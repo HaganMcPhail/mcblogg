@@ -75,18 +75,19 @@ $(document).ready(function(){
     }
   });
 
-  $('.years a').click(function(){
+  $('.years a').click(function(e){
+    e.preventDefault();
+    console.log('flip');
     year = $(this).attr('year');
-    $('.months').show();
-    $('.years').hide();
+    $('.panel').addClass('flip');
   });
 
-  $('.months a').click(function(){
+  $('.months a').click(function(e){
+    e.preventDefault();
     month = $(this).attr('month');
     removeActiveLinks();
     $('.archive-box').hide("slide", { direction: "right" }, 300, function(){
-      $('.months').hide();
-      $('.years').show();
+      $('.panel').removeClass('flip');
       $('body').css('overflow', 'visible');
     });
     removeActiveSection($('section.active'));
@@ -108,6 +109,10 @@ $(document).ready(function(){
     closeOpenSection();
   });
 
+  $('div[class$="-icon"]').on("click", function(){
+    closeOpenSection();
+  });
+
   $('input').keyup(function(event){
     if(event.keyCode == 13){
         closeOpenSection();
@@ -117,14 +122,17 @@ $(document).ready(function(){
   $('.menu-button-container').on("click", function(){
     if ($(this).hasClass('active')){
       $('.xs-menu').hide("slide", { direction: "left" }, 300);
+      $('.menu-button-container').find('i').attr('class', 'fa fa-bars');
       $(this).removeClass('active');
     } else {
       $('.xs-menu').show("slide", { direction: "right" }, 300);
+      $('.menu-button-container').find('i').attr('class', 'fa fa-close');
       $(this).addClass('active');
     }
   });
 
-  $('.logo').on("click", function(){
+  $('.logo').on("click", function(e){
+    e.preventDefault();
     $('.archive-header').hide();
     $('.featured-toggle').show();
     loadPosts();

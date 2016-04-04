@@ -1,3 +1,4 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 $(document).ready(function(){
 
   var closeOpenSection = function(){
@@ -74,19 +75,18 @@ $(document).ready(function(){
     }
   });
 
-  $('.years a').click(function(e){
-    e.preventDefault();
-    console.log('flip');
+  $('.years a').click(function(){
     year = $(this).attr('year');
-    $('.panel').addClass('flip');
+    $('.months').show();
+    $('.years').hide();
   });
 
-  $('.months a').click(function(e){
-    e.preventDefault();
+  $('.months a').click(function(){
     month = $(this).attr('month');
     removeActiveLinks();
     $('.archive-box').hide("slide", { direction: "right" }, 300, function(){
-      $('.panel').removeClass('flip');
+      $('.months').hide();
+      $('.years').show();
       $('body').css('overflow', 'visible');
     });
     removeActiveSection($('section.active'));
@@ -140,3 +140,5 @@ $(document).ready(function(){
   loadPosts();
   $('footer').show();
 });
+
+},{}]},{},[1]);

@@ -1,5 +1,11 @@
 @import "variables";
 @import "mixins";
+@import "flip";
+
+@font-face {
+    font-family: "copperplate";
+    src: url(../fonts/Copperplate.ttc) format("truetype");
+}
 
 .wrapper {
   position: relative;
@@ -11,7 +17,7 @@ body {
   background-color: $primary-white;
   font-size: 16px;
   color: $primary-black;
-  font-family: copperplate, 'Lucida Grande';
+  font-family: Copperplate, 'Lucida Grande';
   width: 100%;
 }
 
@@ -180,6 +186,9 @@ body {
       padding-top: 5px;
       font-size: 1.2em;
       font-weight: bold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .blog-date {
       font-size: .8em;
@@ -303,6 +312,7 @@ section[class$="-box"], section[class$="-box active"] {
   color: $primary-black;
   text-align: center;
   z-index: 10;
+  overflow: scroll;
   div[class$="-container"] {
     margin-top: 34vh;
   }
@@ -358,11 +368,10 @@ section[class$="-box"], section[class$="-box active"] {
 
 .archive-box {
   .archive-container {
+    background-color: transparent;
     position: relative;
     display: inline-block;
-    background-color: $primary-white;
-    padding: 5px 25px;
-    width: 300px;
+    width: 400px;
     height: calc(100% - 100px);
     margin: 50px auto !important;
     @include bp-small {
@@ -381,6 +390,7 @@ section[class$="-box"], section[class$="-box active"] {
     top: 70px;
     left: 0;
     width: 100%;
+    padding: 15px;
     .container {
       width: 100% !important;
     }
@@ -391,13 +401,6 @@ section[class$="-box"], section[class$="-box active"] {
         color: $primary-blue;
       }
     }
-  }
-  .years {
-    z-index: 5;
-  }
-  .months {
-    z-index: 6;
-    display: none;
   }
 }
 
@@ -411,6 +414,8 @@ section[class$="-box"], section[class$="-box active"] {
   }
   textarea {
     margin-bottom: -10px !important;
+    border: none;
+    outline: none;
   }
   .contact-icon {
     margin-bottom: -10px;
@@ -435,7 +440,7 @@ section.xs-menu{
   width:100%;
   border-top: 2px solid $primary-blue;
   background-color: rgba($primary-black, 1);
-  height:calc(100vh - 105px);
+  min-height:calc(100vh - 105px);
   font-size: 2em;
   color: $primary-black;
   text-align: center;
