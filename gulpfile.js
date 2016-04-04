@@ -10,6 +10,7 @@ var lint = require('gulp-eslint'); //Lint JS files, including JSX
 var sass = require('gulp-sass'); //Sass
 var cssmin = require('gulp-cssmin');
 var uglify = require('gulp-uglify');
+var buffer = require('vinyl-buffer');
 
 var config = {
 	port: 9003,
@@ -77,8 +78,9 @@ gulp.task('js', function() {
 	browserify(config.paths.mainJs)
 		.bundle()
 		.on('error', console.error.bind(console))
-		// .pipe(uglify())
 		.pipe(source('bundle.js'))
+		.pipe(buffer())
+		.pipe(uglify())
 		.pipe(gulp.dest(config.paths.dist + '/scripts'))
 		.pipe(connect.reload());
 });
@@ -111,8 +113,8 @@ gulp.task('unslider', function() {
 gulp.task('css', function() {
 	gulp.src(config.paths.css)
 		.pipe(sass())
-		// .pipe(cssmin())
 		.pipe(concat('bundle.css'))
+		.pipe(cssmin())
 		.pipe(gulp.dest(config.paths.dist + '/css'))
 		.pipe(connect.reload());
 });
