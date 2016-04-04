@@ -70,6 +70,7 @@ $(document).ready(function(){
       setFocus();
       $('.xs-menu').hide("slide", { direction: "left" }, 300);
       $('.menu-button-container').removeClass('active');
+      $('.menu-button-container').find('i').attr('class', 'fa fa-bars');
       $('body').css('overflow', 'hidden');
     }
   });
@@ -135,6 +136,10 @@ $(document).ready(function(){
     $('.archive-header').hide();
     $('.featured-toggle').show();
     loadPosts();
+  });
+
+  $('.return-top').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 500);
   });
 
   loadPosts();

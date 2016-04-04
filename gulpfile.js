@@ -23,19 +23,20 @@ var config = {
 		jquery: [
 			'node_modules/jquery/dist/jquery.min.js'
 		],
+		jqueryui: [
+			'src/scripts/jquery-ui.min.js'
+		],
 		bootstrap: [
 			'node_modules/bootstrap/dist/js/bootstrap.min.js'
 		],
 		unslider: './src/scripts/unslider-min.js',
 		images: './src/images/*',
 		css: [
-      		'node_modules/bootstrap/dist/css/bootstrap.min.css',
-      		'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
-      		'node_modules/toastr/toastr.css',
-			'./src/css/unslider.css',
-			'./src/css/unslider-dots.css',
-			'./src/css/font-awesome.min.css',
-			'./src/css/main.scss'
+    		'node_modules/bootstrap/dist/css/bootstrap.min.css',
+    		'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
+    		'node_modules/jquery-ui/themes/smoothness/jquery-ui.min.css',
+				'node_modules/font-awesome/css/font-awesome.min.css',
+				'./src/css/main.scss'
     	],
 		fonts: [
 			'node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot',
@@ -84,6 +85,11 @@ gulp.task('js', function() {
 
 gulp.task('jquery', function() {
 	gulp.src(config.paths.jquery)
+		.pipe(gulp.dest(config.paths.dist + '/scripts'))
+});
+
+gulp.task('jqueryui', function() {
+	gulp.src(config.paths.jqueryui)
 		.pipe(gulp.dest(config.paths.dist + '/scripts'))
 });
 
@@ -145,4 +151,4 @@ gulp.task('watch', function() {
 	gulp.watch(config.paths.css, ['css']);
 });
 
-gulp.task('default', ['html', 'js', 'jquery', 'bootstrap', 'fonts', 'smooth', 'unslider', 'css', 'images', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'jquery', 'jqueryui', 'bootstrap', 'fonts', 'smooth', 'unslider', 'css', 'images', 'lint', 'open', 'watch']);

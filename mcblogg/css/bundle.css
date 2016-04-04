@@ -7855,6 +7855,60 @@ button.close {
   font-family: "copperplate";
   src: url(../fonts/Copperplate.ttc) format("truetype"); }
 
+@font-face {
+  font-family: "rocko";
+  src: url(../fonts/rocko.ttf) format("truetype"); }
+
+.panel {
+  position: relative; }
+  .panel .front {
+    padding: 15px 15px;
+    position: absolute;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; }
+  .panel.flip .front {
+    z-index: 900;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg); }
+  .panel .back {
+    position: absolute;
+    padding: 15px 15px;
+    top: 0;
+    z-index: 800;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: rotateY(-180deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-transform: rotateY(-180deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+    /* -- transition is the magic sauce for animation -- */
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all 3s ease-in-out;
+    transition: all .3s ease-in-out; }
+  .panel.flip .back {
+    z-index: 1000;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg); }
+
 .wrapper {
   position: relative;
   padding-bottom: 50px;
@@ -7864,7 +7918,8 @@ body {
   background-color: #FAFAFA;
   font-size: 16px;
   color: #444444;
-  font-family: copperplate, 'Lucida Grande';
+  font-family: rocko, 'Lucida Grande';
+  letter-spacing: 1px;
   width: 100%; }
 
 .logo-container svg {
@@ -7915,13 +7970,9 @@ body {
   line-height: 65px;
   font-size: 1.5em;
   margin-top: -7px; }
-  .menu-bar .logo {
-    height: 55px;
-    padding-top: 8px;
-    cursor: pointer; }
   .menu-bar img.logo {
-    height: 48px;
-    padding-top: 0px; }
+    height: 50px;
+    margin-top: -5px; }
   .menu-bar .menu-icon-container {
     float: left;
     width: 20%;
@@ -8009,7 +8060,10 @@ body {
     .blog-preview .blog-info .blog-title {
       padding-top: 5px;
       font-size: 1.2em;
-      font-weight: bold; }
+      font-weight: bold;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
     .blog-preview .blog-info .blog-date {
       font-size: .8em;
       text-align: right; }
@@ -8212,11 +8266,10 @@ section[class$="-box"], section[class$="-box active"] {
       color: #0AC2D2; }
 
 .archive-box .archive-container {
+  background-color: transparent;
   position: relative;
   display: inline-block;
-  background-color: #FAFAFA;
-  padding: 5px 25px;
-  width: 300px;
+  width: 400px;
   height: calc(100% - 100px);
   margin: 50px auto !important; }
   @media only screen and (max-width: 768px) {
@@ -8234,7 +8287,8 @@ section[class$="-box"], section[class$="-box active"] {
   overflow: scroll;
   top: 70px;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  padding: 15px; }
   .archive-box .months .container, .archive-box .years .container {
     width: 100% !important; }
   .archive-box .months a, .archive-box .years a {
@@ -8242,13 +8296,6 @@ section[class$="-box"], section[class$="-box active"] {
     color: #444444; }
     .archive-box .months a:hover, .archive-box .years a:hover {
       color: #0AC2D2; }
-
-.archive-box .years {
-  z-index: 5; }
-
-.archive-box .months {
-  z-index: 6;
-  display: none; }
 
 .contact-box .contact-container {
   margin: 23vh auto !important; }

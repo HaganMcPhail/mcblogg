@@ -71,22 +71,24 @@ $(document).ready(function(){
       setFocus();
       $('.xs-menu').hide("slide", { direction: "left" }, 300);
       $('.menu-button-container').removeClass('active');
+      $('.menu-button-container').find('i').attr('class', 'fa fa-bars');
       $('body').css('overflow', 'hidden');
     }
   });
 
-  $('.years a').click(function(){
+  $('.years a').click(function(e){
+    e.preventDefault();
+    console.log('flip');
     year = $(this).attr('year');
-    $('.months').show();
-    $('.years').hide();
+    $('.panel').addClass('flip');
   });
 
-  $('.months a').click(function(){
+  $('.months a').click(function(e){
+    e.preventDefault();
     month = $(this).attr('month');
     removeActiveLinks();
     $('.archive-box').hide("slide", { direction: "right" }, 300, function(){
-      $('.months').hide();
-      $('.years').show();
+      $('.panel').removeClass('flip');
       $('body').css('overflow', 'visible');
     });
     removeActiveSection($('section.active'));
@@ -135,6 +137,10 @@ $(document).ready(function(){
     $('.archive-header').hide();
     $('.featured-toggle').show();
     loadPosts();
+  });
+
+  $('.return-top').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 500);
   });
 
   loadPosts();
