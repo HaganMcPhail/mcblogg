@@ -197,18 +197,19 @@ body {
   box-shadow: 0px 1px 3px rgba($black, 0.2);
   min-height:200px;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: $fontFamily;
   img {
     width: 100%;
   }
   .blog-info {
     .blog-title {
       padding-top: 5px;
-      font-size: 1.2em;
+      font-size: 1em;
       font-weight: bold;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      font-family: "avenir next", "verdana", "sans-serif";
     }
     .blog-date {
       font-size: .8em;
