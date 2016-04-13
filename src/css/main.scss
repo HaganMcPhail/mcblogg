@@ -321,17 +321,17 @@ footer {
 section[class$="-box"], section[class$="-box active"] {
   position: absolute;
   display: none;
-  top:105px;
+  top:104px;
   left:0;
   width:100%;
   border-top: 2px solid $primary-blue;
   background-color: rgba($primary-blue, 0.9);
   height:calc(100vh - 105px);
-  font-size: 2em;
+  font-size: 1.5em;
   color: $primary-black;
   text-align: center;
   z-index: 10;
-  overflow: scroll;
+  //overflow: scroll;
   div[class$="-container"] {
     margin-top: 34vh;
   }
@@ -405,7 +405,6 @@ section[class$="-box"], section[class$="-box active"] {
   .months, .years {
     background-color: $primary-white;
     position: absolute;
-    overflow: scroll;
     top: 70px;
     left: 0;
     width: 100%;
@@ -433,6 +432,7 @@ section[class$="-box"], section[class$="-box active"] {
   }
   textarea {
     margin-bottom: -10px !important;
+    padding: 10px;
     border: none;
     outline: none;
   }
@@ -454,7 +454,7 @@ section[class$="-box"], section[class$="-box active"] {
 section.xs-menu{
   position: absolute;
   display: none;
-  top:105px;
+  top:104px;
   left:0;
   width:100%;
   border-top: 2px solid $primary-blue;
@@ -467,8 +467,8 @@ section.xs-menu{
     float: left;
     display: inline-block;
     height: 50vw;
-    width: 50vw;
-    padding-top: calc(25vw - 1em);
+    width: 50%;
+    padding-top: calc(25vw - 1.2em);
     box-sizing: border-box;
     &:nth-of-type(1) {
       border-right: 1px solid $primary-blue;
@@ -490,6 +490,7 @@ section.xs-menu{
     }
     a, &:focus, a.active {
       color: $white;
+      outline: none;
       text-decoration: none;
       &:hover{
         color: darken($white, 50%);
